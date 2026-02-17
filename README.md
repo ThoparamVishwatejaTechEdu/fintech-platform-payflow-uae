@@ -104,6 +104,14 @@ npm run dev
 
 ---
 
+## 📚 Documentation
+
+- [Architecture](docs/architecture.md)
+- [API Flow](docs/api-flow.md)
+- [Services Overview](docs/services-overview.md)
+- [Deployment Guide](docs/deployment.md)
+
+
 ## 👨‍💻 Author
 
 Vishwateja Thoparam
