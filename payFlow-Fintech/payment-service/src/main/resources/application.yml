@@ -1,0 +1,76 @@
+#server:
+#  port: 8083
+#
+#spring:
+#  datasource:
+#    url: jdbc:mysql://mysql:3306/payflow_payment?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC
+#    username: root
+#    password: Vishwa@data123
+#
+#  jpa:
+#    hibernate:
+#      ddl-auto: update
+#    show-sql: true
+#
+#  kafka:
+#    bootstrap-servers: localhost:9092
+#    admin:
+#      auto-create: true
+#
+#logging:
+#  level:
+#    org.springframework.kafka: INFO
+#
+#
+#
+#resilience4j:
+#  circuitbreaker:
+#    instances:
+#      walletService:
+#        slidingWindowSize: 10
+#        failureRateThreshold: 50
+#        waitDurationInOpenState: 10s
+#        permittedNumberOfCallsInHalfOpenState: 3
+#        automaticTransitionFromOpenToHalfOpenEnabled: true
+#
+#  timelimiter:
+#    instances:
+#      walletService:
+#        timeoutDuration: 3s
+
+
+
+server:
+  port: 8083
+
+spring:
+  profiles:
+    active: local
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+resilience4j:
+  circuitbreaker:
+    instances:
+      walletService:
+        slidingWindowSize: 10
+        failureRateThreshold: 50
+        waitDurationInOpenState: 10s
+        permittedNumberOfCallsInHalfOpenState: 3
+        automaticTransitionFromOpenToHalfOpenEnabled: true
+
+  timelimiter:
+    instances:
+      walletService:
+        timeoutDuration: 3s
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,metrics
+
+

@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    url: jdbc:mysql://mysql:3306/payflow_payment?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC
+    username: root
+    password: root
+
+  kafka:
+    bootstrap-servers: kafka:9092
+
+  wallet:
+    service:
+      url: http://wallet-service:8082
+
+  kyc:
+    service:
+      url: http://kyc-service:8084
